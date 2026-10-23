@@ -1,0 +1,289 @@
+/* ----------------------------- */
+/* Reset CSS
+/* ----------------------------- */
+
+@charset "UTF-8";
+html {
+  /* on s'arrange pour que 1rem soit égal à 10px */
+  font-size: 62.5%;
+  /* IE9-IE11 */
+  font-size: calc(1em * 0.625);
+}
+
+/* la suite du reset permet d'enlever les marges par défaut créées par les navigateurs */
+/* et de donner un comportement plus intuitif aux principaux éléments */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+ol, ul, menu {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5{
+  font-weight: normal;
+}
+*[role='button']{
+	cursor: pointer;
+	user-select: none;
+}
+
+/* ----------------------------- */
+/* Typo
+/* ----------------------------- */
+
+@font-face {
+    font-family: 'Karrik-Regular';
+    src: url('../fonts/Karrik-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'AlphaMackAOE';
+    src: url('../fonts/AlphaMackAOE.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* ----------------------------- */
+/* Couleurs
+/* ----------------------------- */
+
+:root{
+  --couleur1: #F94144; /* rouge */
+  --couleur2: #F3722C; /* darkorange */
+  --couleur3: #F8961E; /* lightorange */
+  --couleur4: #F9844A; /* pinkorange */
+  --couleur5: #F9C74F; /* jaune */
+  --couleur6: #90BE6D; /* vert */
+  --couleur7: #43AA8B; /* turquoise */
+  --couleur8: #4D908E; /* lightblue*/
+  --couleur9: #577590; /* bleuviolet */
+  --couleur10: #277DA1; /* darkblue */
+}
+
+
+/* Typos */ 
+
+.intro-accueil h1{
+  color: var(--couleur1);
+}
+
+h2{
+  text-align: center;
+  font-family: 'Karrik-Regular';
+}
+
+body{
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 1.6rem;
+	line-height: 1.2;
+}
+
+.intro-accueil h1{
+  font-family: 'Karrik-Regular';
+  font-size: 700%;
+}
+
+.intro-accueil p{
+  font-family: 'Helvetica';
+  font-size: 100%;
+}
+
+
+/* ----------------------------- */
+/* PAGE ACCUEIL
+/* ----------------------------- */
+
+header{
+  position: sticky;
+  top: 0px;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: #DBD8F0;
+}
+
+button{
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  background-color: yellow;
+  padding: 0.5%;
+  font-family: 'Karrik-Regular';
+}
+
+.intro-accueil{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  margin-top: 3%;
+  margin-left: 3%;
+  background-color: white;
+  max-width: 25vw; 
+}
+
+li{
+  margin-bottom: 4%;
+  padding: 0.7em;
+  border-radius: 1em;
+  font-size: 2rem;
+}
+
+.fond{
+  z-index: -1;
+  height: 100vh;
+  position: absolute;
+  right: 0%;
+}
+
+.menu_atelier{
+  margin-top: 35%;
+}
+
+/* COULEURS BOUTON ACCUEIL */
+
+.refs{
+  background-color: var(--couleur3);
+}
+
+.outils{
+  background-color: var(--couleur2);
+}
+
+.tutos{
+  background-color: var(--couleur10);
+}
+
+.fonderies{
+  background-color: var(--couleur1);
+}
+
+.sitotheque{
+  background-color: var(--couleur6);
+}
+
+/* PAGE BIBLIO ARTISTES */
+
+.references-body{
+  background-image: url("../images/references_bg.webp");
+  background-size: 100px;
+}
+
+.eyes_gif{
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  width: 7%;
+}
+
+.references-grille{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin: 2%;
+}
+
+.references{
+  margin: 3%;
+  background-color: white;
+  padding: 5%;
+}
+
+.img-references{
+  margin-bottom: 1%;
+}
+
+.titre-references{
+  font-weight: bold;
+}
+
+.lien-references{
+  font-size: 75%;
+  color: var(--couleur7);
+  text-decoration: underline;
+}
+
+
+/* PAGE OUTILS */
+
+.outils-grille{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  margin: 2%;
+}
+
+.outils-grille .references{
+  padding: 0%;  
+}
+
+/* PAGE FONDERIES TYPOS*/
+
+.fonderies_liens{
+  display: block;
+  margin: 2%;
+  padding: 1%;
+  border: solid;
+  border-color: black;
+  background-color: white;
+  
+}
+
+.fonderies-body{
+  background-color: rgba(165, 242, 135, 0.8);
+}
+
+.duck_gif{
+  position: absolute;
+  right: 10%;
+  bottom: 10%;
+  width: 15%;
+}

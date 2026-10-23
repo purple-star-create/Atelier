@@ -1,0 +1,196 @@
+/* ----------------------------- */
+/* Reset CSS
+/* ----------------------------- */
+
+@charset "UTF-8";
+html {
+  /* on s'arrange pour que 1rem soit égal à 10px */
+  font-size: 62.5%;
+  /* IE9-IE11 */
+  font-size: calc(1em * 0.625);
+}
+
+/* la suite du reset permet d'enlever les marges par défaut créées par les navigateurs */
+/* et de donner un comportement plus intuitif aux principaux éléments */
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+ol, ul, menu {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5{
+  font-weight: normal;
+}
+*[role='button']{
+	cursor: pointer;
+	user-select: none;
+}
+
+/* TYPO */
+
+@font-face {
+    font-family: 'Karrik-Regular';
+    src: url('../fonts/Karrik-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* ----------------------------- */
+/* Design général
+/* ----------------------------- */
+header{
+  padding-top: 2%;
+  padding-bottom: 2%;
+  position: sticky;
+  background-color: #DBD8F0;
+  top: 0px;
+  z-index: 1;
+}
+
+body{
+	font-family: 'Helvetica', Arial, sans-serif;
+	font-size: 1.6rem; /* 1.6rem = 16px dans notre cas */
+	line-height: 1.2;
+  background-color: #DBD8F0;
+}
+
+h2{
+  text-align: center;
+  font-family: 'Karrik-Regular';
+}
+
+main{
+  padding: 2%;
+}
+
+.section-title{
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+h3{
+  font-size: 2.5rem;
+  text-align: left;
+}
+
+button{
+  position: fixed;
+  top: 3%;
+  left: 2%;
+  background-color: yellow;
+  padding: 0.5%;
+  font-family: 'Karrik-Regular';
+}
+
+/* Grille de projets + projet "en avant" */
+
+.sites-grille{
+  display: flex;
+  flex-wrap: wrap; /* permet de faire passer les éléments sur plusieurs lignes */
+}
+
+.sites-grille .site{ /* les projets dans la grille */
+ width: calc(100% * 1/3); /* outil calculatrice (multiplication/addition/soustraction/division) 
+  permet d'avoir des colonnes égales */
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-bottom: 4rem;
+}
+
+.site img, video{ /* mise en forme des images dans la grille */
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* permet d'avoir même proportion pour ttes images */
+  object-fit: cover; /* sinon image sera écrasée */
+}
+
+.site video{
+  border-radius: 1.2rem; /* rounded edges of image or video */
+  margin-bottom: 3rem;
+  filter: drop-shadow(0 0 2rem rgba(247, 242, 74, 1));
+}
+
+.site img{
+  margin-bottom: 2rem; /* marge entre image et texte */
+  filter: drop-shadow(0 0 1rem rgba(57, 41, 239, 0.75)); /* ombre portée image */
+}
+
+.site p{
+  margin-top: 1rem; /* marge entre ts paragraphes dans balise projet */
+}
+
+.site .titre-site,
+.site .lien{
+  font-size: 1.2rem;
+}
+
+.site .lien a{ /* séléctionne que les liens */
+  color: #0000a7;
+}
+
+.site .lien a:hover{
+  text-decoration: underline;
+}
+
+/* RESPONSIVENESS OF PAGE*/
+
+@media (min-width: 701px) and (max-width: 1100px){ 
+  .sites-grille .site{
+    width: 50%;
+  }
+}
+
+@media (max-width: 700px){
+  .sites-grille .site{
+  width: 100%;
+}
